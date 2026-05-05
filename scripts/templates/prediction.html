@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Class</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://stories.ecmwf.int/forecasting-pollen-to-alleviate-allergy-suffering/assets/DBdrbI2fCH/st16-istock-1138405619-2560-2560x1446.jpeg'); /* Replace with your own image URL or path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        h2 {
+            color: #4682b4;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #a9d0f5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #28a745; /* A nice green color */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Uploaded Image</h1>
+
+    <!-- Display the image -->
+    <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 300px; border: 1px solid #ccc;">
+
+    <form action="/predict" method="post">
+        <!-- Send the image path (still needed for backend) -->
+        <input type="hidden" name="image_path" value="{{ image_path }}">
+
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+    </div>
+</body>
+</html>

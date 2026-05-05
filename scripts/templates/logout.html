@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://thumbs.dreamstime.com/z/zinnia-plant-pink-flower-growing-garden-close-up-79985468.jpg');
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        h2 {
+            color: #4682b4;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #28a745; /* Green for success */
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            word-wrap: break-word; /* Prevents overflow */
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #a9d0f5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <img src="{{ image_path }}" alt="Predicted Image" width="250"><br>
+        <h3>{{ result }}</h3>
+        <a href="/">Upload another image</a>
+    </div>
+</body>
+</html>
